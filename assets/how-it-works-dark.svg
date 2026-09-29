@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="240" viewBox="0 0 1280 240" role="img" aria-label="How Claude Code works: 1 you describe what to build, 2 Claude plans the approach, 3 tools read, write and run, 4 you review and iterate - then loop until it's right">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1612"/>
+      <stop offset="0.5" stop-color="#241d17"/>
+      <stop offset="1" stop-color="#2e251e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f4b393"/>
+      <stop offset="0.5" stop-color="#d97757"/>
+      <stop offset="1" stop-color="#c15f3f"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#d97757"/>
+    </marker>
+    <clipPath id="card"><rect width="1280" height="240" rx="24"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1280" height="240" fill="url(#bg)"/>
+    <rect width="1280" height="4" fill="url(#accent)"/>
+  </g>
+
+  <!-- loop-back path -->
+  <path d="M1128 96 V58 H152 V88" fill="none" stroke="#d97757" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+  <rect x="566" y="46" width="148" height="24" rx="12" fill="#2e251e"/>
+  <text x="640" y="63" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e8906f">loop until it's right</text>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <!-- step boxes -->
+    <g fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1">
+      <rect x="60" y="96" width="232" height="112" rx="16"/>
+      <rect x="360" y="96" width="232" height="112" rx="16"/>
+      <rect x="660" y="96" width="232" height="112" rx="16"/>
+      <rect x="960" y="96" width="232" height="112" rx="16"/>
+    </g>
+
+    <!-- arrows between steps -->
+    <g stroke="#d97757" stroke-width="2.5" marker-end="url(#arrow)">
+      <line x1="298" y1="152" x2="350" y2="152"/>
+      <line x1="598" y1="152" x2="650" y2="152"/>
+      <line x1="898" y1="152" x2="950" y2="152"/>
+    </g>
+
+    <!-- number badges -->
+    <g font-size="15" font-weight="800" text-anchor="middle" fill="#1c1612">
+      <circle cx="96" cy="130" r="16" fill="#f4b393"/><text x="96" y="135">1</text>
+      <circle cx="396" cy="130" r="16" fill="#e8906f"/><text x="396" y="135">2</text>
+      <circle cx="696" cy="130" r="16" fill="#d97757"/><text x="696" y="135">3</text>
+      <circle cx="996" cy="130" r="16" fill="#c15f3f"/><text x="996" y="135" fill="#fff3ec">4</text>
+    </g>
+
+    <!-- titles -->
+    <g font-size="21" font-weight="700" fill="#ffffff">
+      <text x="122" y="137">You describe</text>
+      <text x="422" y="137">Claude plans</text>
+      <text x="722" y="137">Tools execute</text>
+      <text x="1022" y="137">You review</text>
+    </g>
+
+    <!-- subtitles -->
+    <g font-size="15" fill="#b8aca2">
+      <text x="84" y="178">what you want to build</text>
+      <text x="384" y="178">reads the code, picks tools</text>
+      <text x="684" y="178">read, write, run, test</text>
+      <text x="984" y="178">check the diff, steer</text>
+    </g>
+  </g>
+</svg>

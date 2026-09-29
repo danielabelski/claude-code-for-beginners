@@ -36,20 +36,32 @@ Or press `Ctrl+C`
 | `/clear` | Reset context - start fresh between unrelated tasks |
 | `/compact [focus]` | Summarize context with optional focus (e.g., `/compact Focus on API changes`) |
 | `/cost` | Show current token usage and costs |
-| `/effort low\|high\|max` | Adjust reasoning depth (low = fast/cheap, max = deep/Opus only) |
+| `/effort low\|high\|max\|auto` | Adjust reasoning depth (low = fast/cheap, max = deepest reasoning) |
+| `/effort ultracode` | Let Claude run multi-agent workflows for big tasks (uses more tokens) |
 | `/btw` | Side question - answer appears in overlay, never enters history |
 | `/rewind` | Open checkpoint menu to restore conversation, code, or both |
 | `/context` | Visualize current context usage |
+| `/usage` | Session cost, plan limits, and what's eating them |
 | `/model` | Switch model mid-session |
-| `/memory` | Browse auto-memory files |
+| `/plan [task]` | Enter plan mode directly, optionally with a task |
+| `/memory` | Edit CLAUDE.md files and auto memory |
 | `/init` | Generate CLAUDE.md for current project |
 | `/rename` | Rename current session for easy resuming |
+| `/recap` | One-line summary of the session so far |
+| `/export [file]` | Save the conversation as plain text |
 | `/tasks` | Show running background tasks |
-| `/agents` | Manage subagents |
-| `/mcp` | Manage MCP servers |
+| `/agents` | Reminder: ask Claude to create/manage subagents, or edit `.claude/agents/` |
+| `/skills` | List skills with token cost (`t` sorts by tokens) |
+| `/plugin` | Browse, install, and manage plugins |
+| `/reload-plugins` | Apply plugin changes without restarting |
+| `/mcp` | Manage MCP servers (`/mcp reconnect <server>`) |
 | `/hooks` | Browse configured hooks |
+| `/doctor` | Setup checkup; `/doctor prompt-audit` reviews your CLAUDE.md, skills, agents |
 | `/batch` | Parallel large-scale changes across many files |
+| `/deep-research <q>` | Built-in workflow: cross-checked, cited research report |
+| `/workflows` | Watch running and past workflows |
 | `/loop` | Run a prompt on a recurring interval |
+| `/schedule` | Create routines that run in the cloud on a schedule |
 
 ---
 
@@ -412,16 +424,18 @@ description: What this skill does
 
 ## Model Routing
 
-| Task Type | Best Model | Why |
-|-----------|-----------|-----|
-| Quick scans, formatting | Haiku | Fast, cheap |
-| Daily coding, reviews | Sonnet | Good balance |
-| Architecture, complex bugs | Opus | Deep reasoning |
+| Task Type | Tier | Why |
+|-----------|------|-----|
+| Quick scans, formatting | Fast | Quick, cheap |
+| Daily coding, reviews | Balanced | Good balance |
+| Architecture, complex bugs | Most-capable | Deep reasoning |
+
+Pick by tier, not name - run `/model` to see which models map to each tier (names change as new models ship).
 
 ```text
-Use a Haiku agent to scan for unused imports
-Use a Sonnet agent to review the auth module
-Use an Opus agent to plan the database migration
+Use a fast-tier agent to scan for unused imports
+Use a balanced-tier agent to review the auth module
+Use a most-capable-tier agent to plan the database migration
 ```
 
 ---
@@ -455,7 +469,7 @@ Use an Opus agent to plan the database migration
 |----------|--------|
 | `Esc` | Stop current generation |
 | `Esc + Esc` | Open rewind/checkpoint menu |
-| `Shift+Tab` | Cycle permission modes (Default → AcceptEdits → Plan → Auto) |
+| `Shift+Tab` | Cycle permission modes (Manual → Accept edits → Plan → Auto) |
 | `Ctrl+G` | Open plan in external editor |
 | `Ctrl+O` | Toggle verbose mode (see thinking) |
 | `Ctrl+B` | Background current task |
@@ -493,7 +507,7 @@ class\s+\w+          # Class definitions
 ## Token Saving Tips
 
 - **`/clear` between unrelated tasks** - stale context wastes tokens on every message
-- **Start on Sonnet, switch to Opus only for hard problems** - Sonnet handles ~80% of tasks at 1/5 the cost
+- **Start on the balanced tier, step up to most-capable only for hard problems** - the balanced tier handles most everyday work at a fraction of the cost
 - **`/effort low` for simple lookups** - reduces reasoning tokens significantly
 - **Proactive `/compact` at ~50% context** - don't wait for auto-compact at 95%
 - **`/btw` for questions that don't need to stay in context** - zero context cost

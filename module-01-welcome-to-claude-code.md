@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 1](https://img.shields.io/badge/Module_1-32CD32?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_20_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Beginner-32CD32?style=for-the-badge&labelColor=1a1a2e)
+![Module 1](https://img.shields.io/badge/Module_1-d97757?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_20_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Beginner-d97757?style=for-the-badge&labelColor=221c17)
 
 # Welcome to Claude Code
 

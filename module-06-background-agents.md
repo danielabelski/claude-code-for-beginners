@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 6](https://img.shields.io/badge/Module_6-0066FF?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_35_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Intermediate-0066FF?style=for-the-badge&labelColor=1a1a2e)
+![Module 6](https://img.shields.io/badge/Module_6-c15f3f?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_35_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Intermediate-c15f3f?style=for-the-badge&labelColor=221c17)
 
 # Using Background Agents
 
@@ -407,6 +407,66 @@ claude --model <capable-model> -p "Plan the migration from REST to GraphQL"
 
 ---
 
+## Lesson 5b: Dynamic Workflows - When One Agent Isn't Enough
+
+### Three Terminals Is Cute. Try Fifty Agents.
+
+Opening a few terminals works for three tasks. It falls apart at thirty. For jobs like "audit every route handler" or "migrate 200 components to TypeScript", Claude Code has **dynamic workflows**: Claude writes a small script that fans work out to many subagents, runs it in the background, and hands you one result at the end. Your session stays free the whole time.
+
+The difference from what you've seen so far is *who holds the plan*. With a normal subagent, Claude decides turn by turn what to do next and every result piles into your context. With a workflow, the plan lives in a script - the loop, the branching, the intermediate results - and only the final answer comes back to you.
+
+That also lets a workflow do something a single pass can't: have independent agents **check each other's work** before anything gets reported.
+
+### Try the Built-In One First
+
+The fastest way to see one run:
+
+```text
+/deep-research What changed in the Node.js permission model between v20 and v22?
+```
+
+It fans out searches across several angles, fetches and cross-checks the sources, votes on each claim, and returns a cited report - with claims that didn't survive the cross-check already filtered out. Watch it work with:
+
+```text
+/workflows
+```
+
+### Ask for One in Plain English
+
+For your own tasks, just ask. Say "use a workflow", or start your prompt with the keyword `ultracode`:
+
+```text
+use a workflow to audit every route handler under src/routes/ for missing authentication checks, and adversarially verify each finding before reporting it
+```
+
+```text
+ultracode: migrate every component under src/components/ from JavaScript to TypeScript, working on each file in its own isolated copy
+```
+
+```text
+use a workflow to run npx tsc --noEmit and keep fixing the reported errors until the type check passes or two rounds in a row make no progress
+```
+
+You approve the plan before it runs (depending on your permission mode), then it goes off and works. If a run does exactly what you wanted, open `/workflows`, select it, and press `s` to save it as a command you can rerun anytime - `.claude/workflows/` shares it with your team.
+
+### Or Let Claude Decide
+
+```text
+/effort ultracode
+```
+
+With **ultracode** on, Claude plans a workflow for every substantive task in the session on its own. Turn it off with `/effort ultracode off` when you're back to routine work.
+
+### The Catch: Cost
+
+A workflow spawns a lot of agents, so one run can use far more tokens than doing the same task in conversation - and on a subscription that eats your usage limits. Ultracode multiplies that across every request. Three habits keep it sane:
+
+- **Test on a slice first** - one directory, not the whole repo
+- **Watch `/workflows`** - it shows each agent's token usage live, and you can stop a run anytime without losing finished work
+- **Use it for genuinely big jobs** - audits, migrations, research. For a one-file fix, a workflow is a forklift for a teacup
+
+---
+
 ## Lesson 6: Working with Results
 
 ### Understanding the Output
@@ -614,6 +674,7 @@ Before moving to Module 7, make sure you understand:
 - [ ] How to write planning prompts to design implementations
 - [ ] How to delegate complex multi-step tasks
 - [ ] How to run tasks in parallel using multiple sessions
+- [ ] When to reach for a dynamic workflow, and how to keep its cost in check
 - [ ] How to interpret and act on results
 - [ ] Best practices for agentic prompts
 

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="288" viewBox="0 0 1280 288" role="img" aria-label="Without Claude Code you write every line by hand; with it you ship in an afternoon what took a week; the gap compounds daily">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1612"/><stop offset="0.5" stop-color="#241d17"/><stop offset="1" stop-color="#2e251e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f4b393"/><stop offset="0.5" stop-color="#d97757"/><stop offset="1" stop-color="#c15f3f"/>
+    </linearGradient>
+    <clipPath id="card"><rect width="1280" height="288" rx="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#card)">
+    <rect width="1280" height="288" fill="url(#bg)"/>
+    <rect width="1280" height="4" fill="url(#accent)"/>
+  </g>
+  
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <rect x="48" y="44" width="384" height="200" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+    <text x="76" y="84" font-size="13" font-weight="800" letter-spacing="1.8" fill="#e8906f">WITHOUT IT</text>
+    <text x="76" y="120" font-size="24" font-weight="800" fill="#ffffff" text-anchor="start">Stuck in the slow lane</text>
+    <text x="76" y="162" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">Writing every line by hand,</text>
+    <text x="76" y="188" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">hitting the same walls, wondering</text>
+    <text x="76" y="214" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">how everyone else ships so fast.</text>
+    <rect x="448" y="44" width="384" height="200" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+    <text x="476" y="84" font-size="13" font-weight="800" letter-spacing="1.8" fill="#e8906f">WITH IT</text>
+    <text x="476" y="120" font-size="24" font-weight="800" fill="#ffffff" text-anchor="start">An afternoon, not a week</text>
+    <text x="476" y="162" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">Describe the outcome, review the</text>
+    <text x="476" y="188" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">work, and ship in an afternoon</text>
+    <text x="476" y="214" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">what used to take a week.</text>
+    <rect x="848" y="44" width="384" height="200" rx="16" fill="#ffffff" fill-opacity="0.05" stroke="#d97757" stroke-opacity="1" stroke-width="2"/>
+    <text x="876" y="84" font-size="13" font-weight="800" letter-spacing="1.8" fill="#e8906f">THE GAP</text>
+    <text x="876" y="120" font-size="24" font-weight="800" fill="#ffffff" text-anchor="start">It compounds daily</text>
+    <text x="876" y="162" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">Every project you build with AI</text>
+    <text x="876" y="188" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">is one the "I'll learn it later"</text>
+    <text x="876" y="214" font-size="17" font-weight="400" fill="#c9bdb3" text-anchor="start">crowd didn't.</text>
+  </g>
+</svg>

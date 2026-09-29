@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 12](https://img.shields.io/badge/Module_12-6A0DAD?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_50_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Advanced-FF6B35?style=for-the-badge&labelColor=1a1a2e)
+![Module 12](https://img.shields.io/badge/Module_12-a8502f?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_50_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Advanced-a8502f?style=for-the-badge&labelColor=221c17)
 
 # Customizing Claude Code - Making It Yours
 
@@ -16,7 +16,7 @@
 
 ## What You'll Learn
 
-This is where Claude Code goes from a useful tool to *your* tool. CLAUDE.md files (Claude's persistent memory), modular rules, the settings hierarchy, custom skills, commands, hooks, and a first look at custom agents. By the end you can control just about every aspect of how Claude behaves in your projects.
+This is where Claude Code goes from a useful tool to *your* tool. CLAUDE.md files (Claude's persistent memory), modular rules, the settings hierarchy, custom skills, commands, hooks, a first look at custom agents - and plugins, which package all of it so you can install someone else's setup (or share yours) in one command. By the end you can control just about every aspect of how Claude behaves in your projects.
 
 ---
 
@@ -319,15 +319,20 @@ Shared team rules go in `.claude/settings.json`. Your personal overrides go in `
 
 You can also set a default mode for how Claude handles permissions overall. Separate from individual allow/deny rules - think of it as the baseline posture:
 
-| Mode | What It Does |
-|------|-------------|
-| `default` | Prompts for permission on first use |
-| `acceptEdits` | Auto-accepts file edits |
-| `plan` | Read-only, no modifications |
-| `dontAsk` | Auto-denies unless pre-approved |
-| `bypassPermissions` | Skips all checks (containers only!) |
+| Mode | What runs without asking | Best for |
+|------|--------------------------|----------|
+| `auto` | Everything, with background safety checks | Long tasks, fewer interruptions |
+| `default` (shown as **Manual**) | Reads only | Reviewing every action yourself |
+| `acceptEdits` | Reads, file edits, and common file commands (`mkdir`, `mv`, `cp`...) | Iterating on code you're watching |
+| `plan` | Reads only - Claude plans, doesn't change anything | Exploring before you commit to an approach |
+| `dontAsk` | Pre-approved tools only; anything else is denied | Locked-down CI and scripts |
+| `bypassPermissions` | Everything, no checks | Disposable containers and VMs only |
 
-Most people stay on `default` and tune with allow/deny rules. `bypassPermissions` is strictly for disposable container environments - don't use it on your actual machine.
+**Heads up: auto mode is now where you start.** On recent versions, interactive terminal and VS Code sessions begin in `auto` unless you've set something else. In auto mode a second model - a safety classifier - reviews each action in the background instead of stopping to ask you. It's what makes long tasks run without you babysitting them.
+
+It isn't a free pass, though. Some things are never auto-approved in any mode - `rm` on critical paths, tools you've set to "ask", anything needing your input - and deny rules still block everything they match. If you'd rather approve every step yourself, press `Shift+Tab` to switch to Manual, or set `"defaultMode": "manual"` under `permissions` in your settings.
+
+`bypassPermissions` is strictly for throwaway containers - don't run it on your actual machine.
 
 ---
 
@@ -831,7 +836,7 @@ Where agents live:
 | `.claude/agents/` | This project |
 | `~/.claude/agents/` | All your projects |
 
-Use `/agents` to manage them interactively, or create the files by hand.
+The easiest way to make one is to ask: "Create a subagent that reviews code for security issues, read-only tools." Claude writes the file for you. Or create it by hand in `.claude/agents/`.
 
 We go much deeper on agents in the advanced modules. For now, just know they exist and how the basic file format works.
 
@@ -886,6 +891,131 @@ Module 21 goes deep into agent architecture, including multi-agent coordination,
 
 ---
 
+## Lesson 8: Plugins & Marketplaces
+
+### Everything Above, in One Box
+
+You've now built skills, hooks, agents, and MCP servers by hand. A **plugin** is all of that packaged as one installable unit - a folder with a manifest at `.claude-plugin/plugin.json` plus whatever components it ships:
+
+```text
+my-plugin/
+├── .claude-plugin/
+│   └── plugin.json        # name, version, description
+├── skills/review/SKILL.md # runs as /my-plugin:review
+├── agents/reviewer.md     # a subagent Claude can delegate to
+├── hooks/hooks.json       # hooks that fire on lifecycle events
+└── .mcp.json              # MCP servers that give Claude tools
+```
+
+Someone else already built a great review workflow, a commit helper, a security checker? Install their plugin and you get their whole setup with one command. That's the point.
+
+A **marketplace** is just a catalog - a repo with a `.claude-plugin/marketplace.json` listing plugins and where to fetch them. It's not an app store; nobody's hosting anything for you.
+
+---
+
+### Installing Your First Plugin
+
+Anthropic's official marketplace, `claude-plugins-official`, is added automatically the first time you start an interactive session. So the simplest path is:
+
+```text
+/plugin
+```
+
+That opens the plugin panel on the **Discover** tab. Type to search, press Enter on anything interesting to see what it installs.
+
+Or install by name - plugins are addressed as `name@marketplace`:
+
+```text
+/plugin install commit-commands@claude-plugins-official
+```
+
+This doesn't install instantly. It opens the plugin's details so you can see exactly what it adds - **Will install** lists every command, agent, skill, hook, and server - and for official plugins, a **Context cost** estimate. Then you pick a scope:
+
+| Scope | Who gets it | Saved in |
+|-------|-------------|----------|
+| **User** | You, in every project | `~/.claude/settings.json` |
+| **Project** | Everyone on this repo | `.claude/settings.json` (committed) |
+| **Local** | You, in this repo only | `.claude/settings.local.json` |
+
+After install, the plugin's skills show up namespaced: `commit-commands` gives you `/commit-commands:commit`.
+
+---
+
+### Adding Other Marketplaces
+
+Anything outside the official catalog needs its marketplace added first:
+
+```text
+/plugin marketplace add your-org/plugins
+/plugin marketplace add your-org/plugins#v1.2.0     # pin to a tag
+/plugin marketplace add ./my-marketplace            # local folder
+```
+
+Then install from it the same way: `/plugin install formatter@your-org`.
+
+The same commands work from your shell - handy for setup scripts:
+
+```bash
+claude plugin marketplace add anthropics/claude-plugins-official
+claude plugin install commit-commands@claude-plugins-official --scope project
+claude plugin list
+```
+
+---
+
+### Plugins Aren't Free
+
+An enabled plugin is part of **every** session, not just the ones where you use it. Two costs to know about:
+
+- **Context.** The name and description of each skill and agent a plugin adds sit in Claude's context every turn. Install ten plugins "just in case" and you're paying for all of them on every message. Check with `claude plugin details <name>` - the `Always-on` line is the per-session token cost.
+- **Processes.** Its MCP servers run alongside your session, and its hooks fire on their events.
+
+The **Installed** tab in `/plugin` has a **Not used recently** section. Prune it now and then - disable (`claude plugin disable <name>`) is one keystroke and reversible.
+
+---
+
+### Read Before You Install
+
+This is the part people skip, and it's the part that matters. **A plugin runs code on your machine with your permissions.** Hooks and MCP servers run *outside* Claude Code's sandbox. Your permission rules don't cover them.
+
+Marketplace names tell you who publishes the catalog:
+
+- **Official** - names like `claude-plugins-official`, only accepted from `github.com/anthropics/`
+- **Community** - `claude-community` and a couple of others, reviewed and pinned to specific commits
+- **Third-party** - everything else, including your coworker's and your company's
+
+The name tells you who runs the catalog, not what a plugin does. So before installing anything third-party, open its source and read three things:
+
+- **`hooks/hooks.json`** - the exact command each hook runs
+- **`.mcp.json`** - each server's command or URL
+- **`bin/`** - every file in it (it gets added to Claude's `PATH`)
+
+A hook that curls something to a URL you don't recognize is your cue to walk away. And watch updates: auto-update is **on** for official marketplaces and **off** for everything else by default - for third-party plugins, pin to a tag (`#v1.2.0`) and treat updates like dependency bumps: glance at the diff.
+
+---
+
+### Where to Find Good Plugins
+
+- **`/plugin` → Discover** - the official marketplace: Anthropic's own plugins plus partner plugins from tools you probably already use
+- **[claude.com/marketplace](https://claude.com/marketplace/plugins)** - browse the official catalog on the web (note: this website isn't something you `/plugin marketplace add`)
+- **Community directories** - there are several sites indexing thousands of GitHub-hosted skills and plugins. Great for discovery; **unvetted** - apply the checklist above to every one
+
+Start with one or two plugins that fix a real annoyance. Add more when you feel the need, not before.
+
+---
+
+### Sharing Your Own Setup
+
+Built a set of skills and hooks your team keeps asking for? Package them. Load a plugin folder for one session while you develop it - no marketplace needed:
+
+```bash
+claude --plugin-dir ./my-plugin
+```
+
+When it's ready, put it in a repo with a `.claude-plugin/marketplace.json`, and your team adds it with `/plugin marketplace add your-org/your-repo`. The [Advanced Modules](https://payhip.com/b/8E107) cover building, validating, and publishing a marketplace properly (Module 22).
+
+---
+
 ## Hands-On Practice
 
 ### Exercise 1: Set Up Project Memory
@@ -937,6 +1067,22 @@ Module 21 goes deep into agent architecture, including multi-agent coordination,
 
 ---
 
+### Exercise 4: Install and Audit a Plugin
+
+**Task:** Install one plugin from the official marketplace - and actually read what it does first
+
+```text
+1. Run /plugin and browse the Discover tab
+2. Pick a plugin and open its details - read the "Will install" list
+3. Open its source (View on GitHub) and read hooks/hooks.json and .mcp.json
+4. Install it at local scope (this repo only)
+5. Find its skills: type / and look for /<plugin>:<skill>
+6. Run: claude plugin details <name> and note the Always-on token cost
+7. Decide: keep it, or disable it with claude plugin disable <name>
+```
+
+---
+
 ## Module 12 Checklist
 
 - [ ] Created a CLAUDE.md file with project conventions
@@ -949,6 +1095,10 @@ Module 21 goes deep into agent architecture, including multi-agent coordination,
 - [ ] Understand hook events and exit codes
 - [ ] Can configure a basic hook in settings.json
 - [ ] Know what custom agents are and where they live
+- [ ] Know the permission modes, and that auto mode is now the starting default
+- [ ] Can install a plugin by `name@marketplace` and choose the right scope
+- [ ] Can add a marketplace and pin it to a version
+- [ ] Review a plugin's hooks, MCP config, and `bin/` before installing it
 
 ---
 

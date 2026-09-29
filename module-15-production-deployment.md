@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 15](https://img.shields.io/badge/Module_15-6A0DAD?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_60_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Advanced-FF6B35?style=for-the-badge&labelColor=1a1a2e)
+![Module 15](https://img.shields.io/badge/Module_15-a8502f?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_60_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Advanced-a8502f?style=for-the-badge&labelColor=221c17)
 
 # Production Deployment
 
@@ -16,7 +16,7 @@
 
 ## What You'll Learn
 
-The full arc of getting your app out into the world - deployment fundamentals and platform choices (Vercel, Heroku, VPS), Docker containerization, CI/CD pipelines, environment configuration, monitoring, logging, security, and handling database migrations in production without losing sleep.
+The full arc of getting your app out into the world - deployment fundamentals and platform choices (Vercel, Heroku, VPS), Docker containerization, CI/CD pipelines, environment configuration, monitoring, logging, security, and handling database migrations in production without losing sleep. Plus the shortcut for when you don't need a server at all: publishing a live page straight from your session as an artifact.
 
 ---
 
@@ -588,6 +588,57 @@ npm run migrate:rollback
 
 ---
 
+## Lesson 10: Share Without Deploying - Artifacts
+
+### Not Everything Needs a Server
+
+Everything above is for software people will actually *use*. But a lot of what you want to show someone isn't an app - it's a dashboard of last week's errors, a PR walkthrough, three layout options side by side, a migration checklist. Spinning up Vercel for that is overkill.
+
+For those, Claude Code can publish an **artifact**: a live web page on claude.ai, built from whatever your session can reach - your code, your data, your connected tools. No deploy, no hosting, no backend. Just ask:
+
+```text
+Make an artifact that walks through this PR with the diff annotated inline.
+```
+
+```text
+Build a dashboard artifact of last week's deploy failures by service and keep it updated as you investigate.
+```
+
+Claude writes the page, publishes it, prints the URL, and opens it in your browser.
+
+### How It Behaves
+
+- **Private by default.** A new artifact is visible only to you. Share it from the **Share** button in the page header - within your organization on Team/Enterprise, or as a public link.
+- **Updates in place.** Ask Claude to change it and it republishes to the *same* URL. Anyone with the page open sees the new version. Every publish is kept as a version.
+- **Findable later.** `/artifacts` lists everything you've published, even after `/clear` or in a new session. Pass Claude an artifact's URL to update it from a different session.
+- **Comments (Team/Enterprise).** Teammates can comment on a shared page, and Claude can read the threads and make the changes they ask for.
+
+### Good Uses
+
+```text
+Make an artifact with four different layouts for the settings panel, as a grid with a one-line tradeoff under each.
+```
+
+```text
+Turn this migration plan into a checklist artifact. Check items off as you complete them.
+```
+
+```text
+Make a triage board artifact with each open issue as a draggable card across Now, Next, Later, Cut. Add a "Copy as prompt" button so I can paste the final order back here.
+```
+
+That last one is a neat trick: the page becomes a tiny editor, and the result flows back into your session.
+
+There are two shortcuts for common formats: `/slides <brief>` makes a presentation you can edit and export, and `/design <brief>` drafts a visual mockup on a canvas you can tweak by hand.
+
+### What It Isn't
+
+An artifact is **one self-contained page with no backend**. It can't have multiple routes, log users in, or store a database of its own. External requests are locked down too - scripts only from a few public CDNs, no outside images. If you're building something people log into, that's the rest of this module.
+
+Also worth knowing: artifacts need a Pro, Max, Team, or Enterprise plan and a session signed in with `/login` - they don't work when you're running on an API key. And a styled page costs more tokens than the same content as terminal text, so ask for one when seeing beats reading, not by default.
+
+---
+
 ## Hands-On Practice
 
 ### Exercise 1: Deploy Full-Stack App
@@ -649,6 +700,7 @@ That wraps the final module. Make sure you can:
 - [ ] Implement monitoring and logging
 - [ ] Handle database migrations safely
 - [ ] Follow security best practices
+- [ ] Know when an artifact beats a real deployment, and publish one
 
 ---
 

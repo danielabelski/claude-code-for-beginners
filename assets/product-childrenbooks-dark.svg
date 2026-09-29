@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="176" viewBox="0 0 400 176" role="img" aria-label="Children Books - childrenbooks.vercel.app">
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <rect x="8" y="8" width="384" height="160" rx="16" fill="#231c17" fill-opacity="1" stroke="#3b3029" stroke-opacity="1" stroke-width="1"/>
+    <rect x="32" y="32" width="48" height="48" rx="12" fill="#d97757" fill-opacity="0.16"/>
+    <text x="56" y="64" text-anchor="middle" font-size="22" font-weight="800" fill="#d97757">C</text>
+    <text x="96" y="52" font-size="20" font-weight="800" fill="#ffffff" text-anchor="start">Children Books</text>
+    <text x="96" y="74" font-size="14" font-weight="600" fill="#e8906f" text-anchor="start">childrenbooks.vercel.app</text>
+    <text x="32" y="116" font-size="15" font-weight="400" fill="#c9bdb3" text-anchor="start">AI-illustrated children's</text>
+    <text x="32" y="138" font-size="15" font-weight="400" fill="#c9bdb3" text-anchor="start">books</text>
+  </g>
+</svg>

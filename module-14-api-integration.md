@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 14](https://img.shields.io/badge/Module_14-6A0DAD?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_45_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Advanced-FF6B35?style=for-the-badge&labelColor=1a1a2e)
+![Module 14](https://img.shields.io/badge/Module_14-a8502f?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_45_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Advanced-a8502f?style=for-the-badge&labelColor=221c17)
 
 # API Integration and Web Tasks
 
@@ -444,6 +444,54 @@ Security:
 
 ---
 
+## Lesson 8: Claude + Other Models
+
+### The Right Model for the Right Call
+
+Every API in this module so far has been a *service* - weather, GitHub, Stripe. But models are APIs too, and some of the most useful ones aren't trying to be Claude at all.
+
+Here's the idea. Claude is great at reasoning and writing code. But plenty of decisions in a system are small and bounded: "is this command safe?", "is this ticket a bug or a feature?", "does this question even need the big model?" For those you want an answer that's **fast, cheap, and shaped exactly the same every time** - not a paragraph you have to parse.
+
+That's a job for a **decision model**. A new example is **Jev** from TypeSafe AI (early access since September 2026): instead of writing text, it takes the situation plus a list of options *you* define, and returns one of your options with a probability. It can't write code, and it can't explain itself - that's not its seat. It just makes the call.
+
+### Three Seats for Another Model
+
+Any model with an HTTP API can sit beside Claude Code in one of three places:
+
+| Seat | When it runs | Example |
+|------|-------------|---------|
+| **A hook** (Module 12) | Automatically, on every event | Classify every shell command as safe / review / block before it runs |
+| **An MCP tool** (Module 11) | When Claude decides to call it | Give Claude a `classify_issue` tool that returns consistent labels |
+| **Your app's code** | At runtime in your product | Route customer messages so only the hard ones reach Claude |
+
+The rule that ties it together: **don't swap the brain, add specialists.** Claude stays the engineer. Other models take the narrow, repetitive calls it's overqualified for.
+
+A quick taste - here's what asking a decision model a question looks like. Notice you define every allowed answer up front:
+
+```json
+{
+  "model": "jev-latest",
+  "state": { "command": "git push origin main" },
+  "questions": {
+    "risk": {
+      "type": "choice",
+      "instructions": "How risky is this shell command?",
+      "criteria": {
+        "safe": "Read-only or routine",
+        "review": "Changes state or is hard to undo",
+        "block": "Destructive or exfiltrating"
+      }
+    }
+  }
+}
+```
+
+The answer comes back as one of `safe`, `review`, or `block` - never a sentence.
+
+> **Go deeper:** [Advanced Module 28](https://payhip.com/b/8E107) builds all three seats for real: a tested safety gate that runs inside a Claude Code hook (and never grants more permission than you'd give it), a decision model wrapped as an MCP server, a router in front of Claude, model lockdown with managed settings, and how to measure a gate with a proper eval instead of trusting it.
+
+---
+
 ## Hands-On Practice
 
 ### Exercise 1: Weather CLI App
@@ -514,6 +562,7 @@ Before moving to Module 15, make sure you can:
 - [ ] Handle API errors with retry logic
 - [ ] Build complete API wrappers
 - [ ] Test API integrations properly
+- [ ] Know when a decision model beats Claude for a call, and the three seats it can take
 
 ---
 

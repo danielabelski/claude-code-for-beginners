@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 8](https://img.shields.io/badge/Module_8-0066FF?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_45_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Intermediate-0066FF?style=for-the-badge&labelColor=1a1a2e)
+![Module 8](https://img.shields.io/badge/Module_8-c15f3f?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_45_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Intermediate-c15f3f?style=for-the-badge&labelColor=221c17)
 
 # Debugging and Testing
 

@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 5](https://img.shields.io/badge/Module_5-32CD32?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_35_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Beginner-32CD32?style=for-the-badge&labelColor=1a1a2e)
+![Module 5](https://img.shields.io/badge/Module_5-d97757?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_35_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Beginner-d97757?style=for-the-badge&labelColor=221c17)
 
 # Effective Prompting for Coding Tasks
 

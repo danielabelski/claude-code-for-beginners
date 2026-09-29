@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 10](https://img.shields.io/badge/Module_10-0066FF?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_40_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Intermediate-0066FF?style=for-the-badge&labelColor=1a1a2e)
+![Module 10](https://img.shields.io/badge/Module_10-c15f3f?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_40_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Intermediate-c15f3f?style=for-the-badge&labelColor=221c17)
 
 # Development Workflow Best Practices
 
@@ -632,10 +632,17 @@ These commands and shortcuts save real time and real tokens. Learn them early.
 | `/compact [focus]` | Summarize context | At ~50% context usage. Add focus: `/compact Focus on API changes` |
 | `/cost` | Show token usage | Anytime you want to check spending |
 | `/btw` | Side question in overlay | Quick questions that don't need to stay in history |
-| `/effort low\|high\|max` | Adjust reasoning depth | `low` for simple lookups, `max` for architecture decisions |
+| `/effort low\|high\|max\|auto` | Adjust reasoning depth | `low` for simple lookups, `max` for architecture decisions |
 | `/rewind` | Open checkpoint menu | Undo a wrong turn - restore conversation, code, or both |
 | `/context` | Visualize context usage | See what's taking up space |
 | `/rename` | Name the current session | Makes it easy to resume later with `claude --resume name` |
+| `/plan [task]` | Jump straight into plan mode | `/plan fix the auth bug` - think first, touch nothing yet |
+| `/export [file]` | Save the conversation as plain text | Keep a record of a session, or share how you solved something |
+| `/skills` | List skills, with token cost | Press `t` to sort by tokens and spot the expensive ones |
+| `/doctor` | Run a setup checkup | Broken installs, slow hooks, unused skills/plugins eating context |
+| `/doctor prompt-audit` | Audit your CLAUDE.md, skills, agents | Flags prompting patterns written for older models |
+| `/recap` | One-line summary of the session | Coming back after a break and forgot where you were |
+| `/workflows` | See running and past workflows | Watch a big multi-agent run (Module 6) |
 
 ### Essential Keyboard Shortcuts
 
@@ -643,7 +650,7 @@ These commands and shortcuts save real time and real tokens. Learn them early.
 |----------|--------|
 | `Esc` | Stop current generation |
 | `Esc + Esc` | Open rewind/checkpoint menu |
-| `Shift+Tab` | Cycle permission modes (Default → AcceptEdits → Plan → Auto) |
+| `Shift+Tab` | Cycle permission modes (Manual → Accept edits → Plan → Auto) |
 | `Ctrl+G` | Open plan in your external editor |
 | `Ctrl+O` | Toggle verbose mode (see Claude's thinking) |
 | `Ctrl+B` | Send current task to background - you can keep working |

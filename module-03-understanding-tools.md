@@ -1,8 +1,8 @@
 <div align="center">
 
-![Module 3](https://img.shields.io/badge/Module_3-32CD32?style=for-the-badge&labelColor=1a1a2e)
-![Time](https://img.shields.io/badge/⏱_30_min-555555?style=for-the-badge&labelColor=1a1a2e)
-![Difficulty](https://img.shields.io/badge/Beginner-32CD32?style=for-the-badge&labelColor=1a1a2e)
+![Module 3](https://img.shields.io/badge/Module_3-d97757?style=for-the-badge&labelColor=221c17)
+![Time](https://img.shields.io/badge/⏱_30_min-3b3029?style=for-the-badge&labelColor=221c17)
+![Difficulty](https://img.shields.io/badge/Beginner-d97757?style=for-the-badge&labelColor=221c17)
 
 # Understanding Claude Code's Tools
 
@@ -276,7 +276,7 @@ git status           # Check Git status
 docker build .       # Build Docker image
 ```
 
-Before it runs anything, Claude Code shows you the command and asks permission. You stay in control.
+Whether Claude Code stops to ask before running a command depends on your **permission mode**. In Manual mode it shows you each command and waits for your OK. In auto mode - where recent versions start by default - a safety classifier reviews commands in the background and only risky ones stop for you. Press `Shift+Tab` to switch modes anytime; Module 12 covers them properly. Either way, you stay in control.
 
 ---
 

@@ -2,6 +2,21 @@
 
 This free course is actively maintained as Claude Code evolves. Newest first.
 
+## 2026-09 (late September)
+- 🧩 **Module 12** - new lesson on **plugins & marketplaces**: installing by `name@marketplace`,
+  scopes, adding and pinning marketplaces, context cost, and a pre-install security checklist.
+- 🛡️ **Permission modes refreshed** - auto mode is now the starting default; the modes table,
+  Module 3, and the `Shift+Tab` cycle all updated.
+- ⚡ **Module 6** - new lesson on **dynamic workflows** (`/deep-research`, "use a workflow",
+  `/effort ultracode`, `/workflows`) and how to keep their cost in check.
+- 🌐 **Module 15** - new lesson on **artifacts**: publishing live pages without deploying,
+  plus `/slides` and `/design`.
+- 🤝 **Module 14** - new lesson on using **other models beside Claude** (decision models like Jev).
+- ⌨️ New commands added to Module 10 and the quick reference: `/plan`, `/export`, `/skills`,
+  `/doctor prompt-audit`, `/recap`, `/workflows`, `/schedule`, `/reload-plugins`.
+- 🧭 Quick reference version-proofed (model tiers instead of model names).
+- 📦 Advanced Modules → **13** (new Module 28: Claude Code + Other Models).
+
 ## 2026-09 (September)
 - 📚 Deepened **Module 10** with real coverage of **checkpoints & rewind** (`/rewind`,
   `Esc Esc` - the session-wide undo/safety net) and **cost & usage** (`/cost`, `/usage`,
