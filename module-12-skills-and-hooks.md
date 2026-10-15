@@ -1012,7 +1012,7 @@ Built a set of skills and hooks your team keeps asking for? Package them. Load a
 claude --plugin-dir ./my-plugin
 ```
 
-When it's ready, put it in a repo with a `.claude-plugin/marketplace.json`, and your team adds it with `/plugin marketplace add your-org/your-repo`. The [Advanced Modules](https://payhip.com/b/8E107) cover building, validating, and publishing a marketplace properly (Module 22).
+When it's ready, put it in a repo with a `.claude-plugin/marketplace.json`, and your team adds it with `/plugin marketplace add your-org/your-repo`. The Advanced Modules cover building, validating, and publishing a marketplace properly (Module 22), and they're in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 ---
 
@@ -1122,7 +1122,7 @@ You now know how to customize every aspect of Claude Code. Between CLAUDE.md, ru
 
 Next up: Module 13 -- using Claude Code across different programming languages and frameworks.
 
-Want to go deeper? The [Advanced Modules](https://payhip.com/b/8E107) cover custom agents in depth (Module 21), sandbox and plugins (Module 22), and professional development workflows (Module 23).
+Want to go deeper? The Advanced Modules cover custom agents in depth (Module 21), sandbox and plugins (Module 22), and professional development workflows (Module 23). They come with the Real Projects Pack in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 ---
 

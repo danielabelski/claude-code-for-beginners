@@ -741,7 +741,7 @@ Add tests when you modify that code. Don't spend weeks retroactively testing thi
 
 ---
 
-> **Want to build your own debugging tools?** The [Real Projects Pack](https://payhip.com/b/dFXWO) includes a Bug Finder Assistant and Test Case Generator -- both powered by the techniques you just learned.
+> **Want to build your own debugging tools?** The Real Projects Pack includes a Bug Finder Assistant and Test Case Generator -- both powered by the techniques you just learned. It comes with the Advanced Modules in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 Next up: Module 9 -- where you pull everything together and build a complete, real-world project from scratch.
 

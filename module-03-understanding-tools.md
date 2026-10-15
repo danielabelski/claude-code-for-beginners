@@ -695,7 +695,7 @@ Next up: Module 4 -- working with files and code. Reading codebases, writing cle
 
 ---
 
-> **Want to master Claude Code's full toolset?** The [Advanced Modules](https://payhip.com/b/8E107) go deep on custom MCP servers (Module 18), multi-agent orchestration (Module 17), and performance optimization (Module 20).
+> **Want the tools, commands and shortcuts on one page?** That's my free 2-page cheat sheet. It comes with 5 CLAUDE.md templates and 10 daily prompts. [Get it here](https://thedevfounder.com/claude-code?utm_source=github&utm_medium=course&utm_content=module-03) - one email, three PDFs.
 
 ---
 

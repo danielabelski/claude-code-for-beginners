@@ -604,7 +604,7 @@ cargo test
 
 ## What's Next?
 
-> **Build real projects in any language.** The [Real Projects Pack](https://payhip.com/b/dFXWO) includes multi-language projects -- from TypeScript microservices to Python-powered code analysis tools -- each with Claude Code workflows tailored to the language.
+> **Build real projects in any language.** The Real Projects Pack includes multi-language projects -- from TypeScript microservices to Python-powered code analysis tools -- each with Claude Code workflows tailored to the language. It comes with the Advanced Modules in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 Next up: Module 14 -- API integration and working with external services. You'll connect Claude Code to real-world APIs, which is where a lot of the practical work happens.
 

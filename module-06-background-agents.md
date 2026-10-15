@@ -734,7 +734,7 @@ Yes. Use `claude --resume` to pick up where you left off, or `claude --resume au
 
 Next up: Module 7 -- handling Git and version control through Claude Code.
 
-> **Agentic workflows are just the beginning.** The [Advanced Modules](https://payhip.com/b/8E107) cover multi-session orchestration (Module 17) and building custom agentic workflows with autonomous loops and safety safeguards (Module 21).
+> **Agentic workflows are just the beginning.** The Advanced Modules cover multi-session orchestration (Module 17) and building custom agentic workflows with autonomous loops and safety safeguards (Module 21). They come with the Real Projects Pack in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 ---
 

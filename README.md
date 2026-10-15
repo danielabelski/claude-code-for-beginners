@@ -164,9 +164,9 @@ Every module has hands-on challenges at four levels - beginner, intermediate, ad
 
 The course condensed into three PDFs you'll actually keep open while you work: a 2-page cheat sheet, 5 CLAUDE.md templates, and the 10 prompts I use every day.
 
-<a href="https://thedevfounder.com/claude-code"><img src="assets/resources-dark.svg" alt="Free resource pack: 2-page cheat sheet, 5 CLAUDE.md templates, 10 daily prompts" width="100%"></a>
+<a href="https://thedevfounder.com/claude-code?utm_source=github&utm_medium=course&utm_content=readme"><img src="assets/resources-dark.svg" alt="Free resource pack: 2-page cheat sheet, 5 CLAUDE.md templates, 10 daily prompts" width="100%"></a>
 
-**[Get all three at thedevfounder.com/claude-code](https://thedevfounder.com/claude-code)** - one email, three PDFs, unsubscribe whenever you like.
+**[Get all three at thedevfounder.com/claude-code](https://thedevfounder.com/claude-code?utm_source=github&utm_medium=course&utm_content=readme)** - one email, three PDFs, unsubscribe whenever you like.
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
@@ -182,11 +182,11 @@ The free course teaches you the skills. If you want to go further, I've made two
 </tr>
 </table>
 
+**[Get both as a bundle](https://payhip.com/b/S8nU1)** ($59.99) - saves you $10, and it's what most people pick. Instant download, updates included. Or buy one on its own:
+
 **[Advanced Modules](https://payhip.com/b/8E107)** ($29.99) - 13 modules, 39+ hours. Production deployment at scale, multi-agent systems, custom MCP servers, enterprise SSO/RBAC, performance, custom agents, sandboxing and plugins, professional workflows, a three-part deep dive into how Claude Code works internally, what's new in 2026, and using Claude alongside other models.
 
 **[Real Projects Pack](https://payhip.com/b/dFXWO)** ($39.99) - 14 guided builds you can ship, each with CLAUDE.md templates, rules files, and copy-paste prompts. From an AI todo app and a code-review tool up to a full-stack SaaS boilerplate, an AI agent coordinator, and a multi-agent background pipeline.
-
-**[Both as a bundle](https://payhip.com/b/S8nU1)** ($59.99) - saves you $10. Instant download, updates included.
 
 <details>
 <summary>What's free and what's paid</summary>

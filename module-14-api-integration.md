@@ -488,7 +488,7 @@ A quick taste - here's what asking a decision model a question looks like. Notic
 
 The answer comes back as one of `safe`, `review`, or `block` - never a sentence.
 
-> **Go deeper:** [Advanced Module 28](https://payhip.com/b/8E107) builds all three seats for real: a tested safety gate that runs inside a Claude Code hook (and never grants more permission than you'd give it), a decision model wrapped as an MCP server, a router in front of Claude, model lockdown with managed settings, and how to measure a gate with a proper eval instead of trusting it.
+> **Go deeper:** Advanced Module 28 builds all three seats for real: a tested safety gate that runs inside a Claude Code hook (and never grants more permission than you'd give it), a decision model wrapped as an MCP server, a router in front of Claude, model lockdown with managed settings, and how to measure a gate with a proper eval instead of trusting it. It's in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 ---
 
@@ -632,7 +632,7 @@ Next up: Module 15 -- deploying your applications to production. You've built th
 
 ---
 
-> **Build it for real.** The [Real Projects Pack](https://payhip.com/b/dFXWO) includes an API Client Builder that auto-generates type-safe clients from OpenAPI specs -- a hands-on way to apply everything from this module.
+> **Build it for real.** The Real Projects Pack includes an API Client Builder that auto-generates type-safe clients from OpenAPI specs -- a hands-on way to apply everything from this module. It comes with the Advanced Modules in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 *Module 14 Complete*
 

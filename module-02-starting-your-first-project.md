@@ -636,7 +636,7 @@ Next up: Module 3, where we get into Claude Code's tools - what each one does an
 
 ---
 
-> **Looking for project ideas?** The [Real Projects Pack](https://payhip.com/b/dFXWO) has 14 ready-to-build projects -- from CLI tools to a full-stack SaaS boilerplate -- each with step-by-step Claude Code workflows.
+> **Don't write your first CLAUDE.md from scratch.** My free pack has 5 ready-made CLAUDE.md templates for common project types, plus a 2-page cheat sheet and 10 daily prompts. [Get it here](https://thedevfounder.com/claude-code?utm_source=github&utm_medium=course&utm_content=module-02) - one email, three PDFs.
 
 ---
 

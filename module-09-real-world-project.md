@@ -762,7 +762,7 @@ A few ways to keep building on this:
 3. **Actually deploy it** -- getting code running on a real server teaches you things nothing else will
 4. **Ask for code review** -- have someone else read your code and push back
 5. **Contribute to open source** -- you've got the workflow down now
-6. **Build from the [Real Projects Pack](https://payhip.com/b/dFXWO)** -- 14 more project templates including a microservice architecture, full-stack SaaS boilerplate, and API client builder
+6. **Build from the Real Projects Pack** -- 14 more project templates including a microservice architecture, full-stack SaaS boilerplate, and API client builder (it's in the [Complete Bundle](https://payhip.com/b/S8nU1) with the Advanced Modules)
 
 ---
 

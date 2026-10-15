@@ -760,7 +760,7 @@ Before moving to Module 6, make sure you can:
 
 That's prompt engineering - honestly the skill that decides how productive you'll be with Claude Code. Time spent writing a clear prompt is never wasted. Every minute you put in, you get back several.
 
-> **Take your prompting further.** The [Advanced Modules](https://payhip.com/b/8E107) cover professional prompt workflows including the RPI methodology (Research-Plan-Implement) and token-efficient session management (Module 23).
+> **Want prompts that already work?** My free pack has the 10 prompts I use every day, plus a 2-page cheat sheet and 5 CLAUDE.md templates. [Get it here](https://thedevfounder.com/claude-code?utm_source=github&utm_medium=course&utm_content=module-05) - one email, three PDFs.
 
 ---
 

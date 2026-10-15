@@ -828,7 +828,7 @@ Or just start building. Point these skills at real projects, contribute to open 
 
 Next up: if you're ready for more, the advanced modules start with Module 11 -- MCP Servers, which opens a whole new layer of what Claude Code can do.
 
-> **Ready to go professional?** The [Advanced Modules](https://payhip.com/b/8E107) cover production deployment at scale, enterprise integration, performance optimization, and custom agent orchestration. Or grab the [Real Projects Pack](https://payhip.com/b/dFXWO) to practice these workflows on 14 real builds. [Bundle both and save $10.](https://payhip.com/b/S8nU1)
+> **Ready to go professional?** The Advanced Modules cover production deployment at scale, enterprise integration, performance optimization, and custom agent orchestration. The Real Projects Pack lets you practice these workflows on 14 real builds. [Get both in the Complete Bundle](https://payhip.com/b/S8nU1) and save $10.
 
 ---
 

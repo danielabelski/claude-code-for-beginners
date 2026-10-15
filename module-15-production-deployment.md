@@ -772,7 +772,7 @@ You made it through the entire Claude Code for Beginners course. You can now bui
 
 What comes next is simple: build things. Real projects - not just tutorials - are where all of this clicks into place. Contribute to open source if that's your thing. Share what you learned. And keep going.
 
-> **Keep going.** The [Advanced Modules](https://payhip.com/b/8E107) pick up right where this course ends -- production Kubernetes deployments, multi-agent systems, enterprise integration, and performance optimization. The [Real Projects Pack](https://payhip.com/b/dFXWO) gives you 14 complete project templates to practice on. [Bundle both and save $10.](https://payhip.com/b/S8nU1)
+> **Keep going.** The Advanced Modules pick up right where this course ends -- production Kubernetes deployments, multi-agent systems, enterprise integration, and performance optimization. The Real Projects Pack gives you 14 complete project templates to practice on. [Get both in the Complete Bundle](https://payhip.com/b/S8nU1) and save $10.
 
 ---
 

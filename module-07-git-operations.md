@@ -654,7 +654,7 @@ Before moving to Module 8, make sure you can:
 
 ---
 
-> **Level up your git workflow.** The [Advanced Modules](https://payhip.com/b/8E107) cover enterprise git patterns including automated PR pipelines, git worktree isolation, and monorepo strategies (Module 23).
+> **Level up your git workflow.** The Advanced Modules cover enterprise git patterns including automated PR pipelines, git worktree isolation, and monorepo strategies (Module 23). They come with the Real Projects Pack in the [Complete Bundle](https://payhip.com/b/S8nU1).
 
 Next up: Module 8 -- debugging and testing with Claude Code, where things get really practical.
 

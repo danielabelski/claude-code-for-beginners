@@ -668,7 +668,7 @@ Be specific about *what* to change; let Claude Code handle *how*.
 
 ---
 
-> **Want to build a real code analysis tool?** The [Real Projects Pack](https://payhip.com/b/dFXWO) includes a Code Review Tool and Bug Finder Assistant that put these file and code skills to work.
+> **Keep the file commands handy.** My free 2-page cheat sheet has them all, plus 5 CLAUDE.md templates and the 10 prompts I use every day. [Get it here](https://thedevfounder.com/claude-code?utm_source=github&utm_medium=course&utm_content=module-04) - one email, three PDFs.
 
 ---
 
