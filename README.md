@@ -15,15 +15,50 @@
 [![GitHub Stars](https://img.shields.io/github/stars/koki7o/claude-code-for-beginners?style=for-the-badge&logo=github&color=d97757&labelColor=221c17)](https://github.com/koki7o/claude-code-for-beginners/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/koki7o/claude-code-for-beginners?style=for-the-badge&logo=github&color=d97757&labelColor=221c17)](https://github.com/koki7o/claude-code-for-beginners/network)
 
-**[Quick start](#quick-start)** · **[Course map](#course-map)** · **[Free PDF pack](#free-resource-pack)** · **[Paid packs](#going-further)** · **[Changelog](CHANGELOG.md)**
+**[The problem](#the-problem)** · **[Quick start](#quick-start)** · **[Course map](#course-map)** · **[Free PDF pack](#free-resource-pack)** · **[Paid packs](#going-further)** · **[Changelog](CHANGELOG.md)**
 
 </div>
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
-I use Claude Code every day to build and ship my own products - [gitscroll.dev](https://gitscroll.dev), [aicofounders.co](https://aicofounders.co), [moltplace.net](https://www.moltplace.net), a Rust [MCP framework](https://github.com/koki7o/mcp-framework) 🦀 and a few more. This is the course I wish I'd had when I started: 15 modules that take you from installing it to deploying something real, free, no signup.
+You installed Claude Code. You typed a few prompts. It wrote some code, broke something else, asked for permissions you didn't understand, and now you're not sure if you're using it right.
 
-Skip around if you already know the basics. Everything is plain Markdown, so you can read it right here on GitHub.
+You're not. Almost nobody is at first. I wasn't either.
+
+## The problem
+
+Claude Code is the most powerful coding tool I've used, and most people use maybe a tenth of it. They chat with it like a chatbot and never touch the parts that actually change how fast you ship.
+
+- **The docs tell you what each feature does, not how to use them together.** You know plan mode, CLAUDE.md, subagents and hooks exist. Nobody tells you which one to learn first, or how to combine them into a workflow that saves you hours every day.
+- **It changes every week.** New commands, new permission modes, new agent features. Half the tutorials you find are already out of date, and you can't tell which half.
+- **Learning by trial and error is expensive.** Every wrong habit costs you tokens, broken code and evenings you don't get back. Some of those habits (letting it write before it reads, skipping the plan, never reviewing the diff) quietly cost you more than you'd guess.
+
+Meanwhile the people who did figure it out are shipping in an afternoon what used to take them a week.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/why-now-dark.svg">
+  <img src="assets/why-now-light.svg" alt="Without it: writing every line by hand. With it: ship in an afternoon what used to take a week. The gap compounds daily." width="100%">
+</picture>
+
+That gap doesn't stay the same size. It compounds. Someone who started six months ago isn't six months ahead of you - they're building things you haven't learned to ask for yet.
+
+## Why I made this
+
+I use Claude Code every day to build and ship my own products - [gitscroll.dev](https://gitscroll.dev), [aicofounders.co](https://aicofounders.co), [moltplace.net](https://www.moltplace.net), a Rust [MCP framework](https://github.com/koki7o/mcp-framework) 🦀 and a few more. I do it around a 9-5 and a kid, so I don't have time to waste on bad habits, and neither do you.
+
+I learned all of it the slow way. This is the course I wish someone had handed me on day one: the right things, in the right order, kept up to date.
+
+## How this course fixes it
+
+| | Figuring it out alone | This course |
+|---|---|---|
+| **Where to start** | Docs, random videos, X threads | Module 1, 20 minutes, you're running |
+| **What order** | Whatever you stumble on | 15 modules, each one building on the last |
+| **Practice** | Hope you remember it | Hands-on challenges at four levels in every module, with worked solutions |
+| **Staying current** | Tutorials that broke two releases ago | Updated when Claude Code changes - last update October 2026 |
+| **Cost** | Your evenings and your tokens | Free, no signup, plain Markdown right here on GitHub |
+
+You don't need to be early to the whole AI wave. You just can't afford to be late to this one. **[Start Module 1 now →](module-01-welcome-to-claude-code.md)**
 
 ## What's new
 
@@ -36,17 +71,6 @@ Skip around if you already know the basics. Everything is plain Markdown, so you
 - **Claude + other models** (Module 14) - and a full Advanced Module 28 on deterministic gates, routers, and decision models like Jev.
 
 Older updates are in the [changelog](CHANGELOG.md).
-
-## Why this matters now
-
-The way software gets built changed, quietly and fast. The developers shipping the most right now aren't the ones typing the fastest - they're the ones who learned to *direct* AI instead of competing with it. That gap widens every month, and it compounds: someone who started six months ago isn't six months ahead, they're building things you haven't learned to ask for yet.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/why-now-dark.svg">
-  <img src="assets/why-now-light.svg" alt="Without it: writing every line by hand. With it: ship in an afternoon what used to take a week. The gap compounds daily." width="100%">
-</picture>
-
-You don't need to be early to the whole AI wave. You just can't afford to be late to this one. Module 1 takes 20 minutes: **[start here](module-01-welcome-to-claude-code.md)**.
 
 ## What is Claude Code?
 
@@ -259,6 +283,6 @@ If the course helped you, give it a ⭐ - it's how other people find it.
 
 [![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=koki7o&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://buymeacoffee.com/koki7o)
 
-<sub>Last updated: September 2026</sub>
+<sub>Last updated: October 2026</sub>
 
 </div>
